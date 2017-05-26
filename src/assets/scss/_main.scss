@@ -1,0 +1,23 @@
+/* Dom reset and normalize */
+@import "_reset";
+@import "_normalize";
+
+/* Import Fonts */
+// @import "_fonts";
+
+/* Declare variables, mixins, and style guide */
+@import "_variables";
+@import "_mixins";
+
+/* Declare Global Base Styles/Effects */
+body {
+	position:relative;
+	margin:0 auto;
+	left:0;
+	right:0;
+	height:100%;
+	text-rendering: optimizeLegibility;
+
+}
+
+/* Add custom external imports */
