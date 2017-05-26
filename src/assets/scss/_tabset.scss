@@ -1,0 +1,125 @@
+#desktopTablet {
+  @include fluidStyle;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .tab-set {
+    text-align: center;
+    width: 100vw;
+    min-height: 340px;
+
+    .tab-header {
+      position: relative;
+      width: 98%;
+      padding: 0;
+      margin: 0 auto 40px;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        border: 1px solid black;
+        @include transition(all 0.3s);
+        cursor: pointer;
+
+        a.tab-btn {
+          span {
+
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            @include transition(all 0.3s);
+          }
+          display: block;
+          padding: 15px 80px;
+          cursor: pointer;
+
+          @media screen and (max-width: $smLaptop) {
+            padding: 12px 60px;
+
+            span {
+              font-size: 1.3rem;
+            }
+          }
+        }
+        &:hover {
+          @include greyGradient;
+          border-color: $neutralGrey;
+          @include transition(all 0.3s);
+        }
+
+        &:nth-child(2) {
+          border-left-color:transparent;
+          border-right-color:transparent;
+        }
+
+
+        &.active {
+          background: $offBlack;
+          @include transition(all 0.3s);
+          a span {
+            color:white;
+            @include transition(all 0.3s);
+          }
+        }
+
+      }
+    }
+    .tab-content .tab-materials {
+      ul {
+        position: relative;
+        width: 98%;
+        padding: 0;
+        margin: 0 auto 40px;
+        text-align: center;
+
+        li {
+          margin: 20px 40px;
+          font-size: 1.6rem;
+
+          span {
+            font-size: 3rem;
+          }
+
+          @media screen and (max-width: $smLaptop) {
+            margin: 10px 25px;
+            font-size: 1.4rem;
+
+            span {
+              font-size: 2.45rem;
+            }
+          }
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+        }
+        .lineUnder {
+          position: relative;
+          width: 50px;
+          border-bottom: 1px solid black;
+          text-align: center;
+          margin: 10px auto 0;
+        }
+      }
+    }
+    .tab-paragraph {
+      position: relative;
+      width: 100vw;
+
+      p {
+        font-weight: bold;
+        max-width: 880px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}

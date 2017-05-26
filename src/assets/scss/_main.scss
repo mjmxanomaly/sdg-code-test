@@ -21,3 +21,13 @@ body {
 }
 
 /* Add custom external imports */
+
+@import "_tabset";
+
+
+/* Custom GLobal Styles */
+
+li {
+	list-style: none;
+	display: inline-block;
+}
