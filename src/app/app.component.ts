@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef, Renderer, AfterViewInit } from '@angular/core';
+import { AccordionComponent } from './accordion/accordion.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   tabSet: any[] = [
       {
@@ -27,7 +28,20 @@ export class AppComponent {
       }
   ];
 
+  @ViewChildren(AccordionComponent) accordion: QueryList<AccordionComponent>;
+
   constructor() {
 
+  }
+
+  ngAfterViewInit() {
+    const accordionList = this.accordion.toArray();
+    const lastItem = accordionList.length - 1;
+    let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    console.log(accordionList);
+    if (w < 515) {
+      accordionList[lastItem].switch = true;
+      console.log(accordionList[lastItem].switch);
+    }
   }
 }

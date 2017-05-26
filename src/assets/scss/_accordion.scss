@@ -1,0 +1,5 @@
+#mobileAccordion {
+  @media screen and (min-width:$mobile) {
+    display:none;
+  }
+}

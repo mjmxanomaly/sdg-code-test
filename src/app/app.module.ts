@@ -9,12 +9,14 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { TabsetComponent } from './tab-components/tabset.component';
 import { TabComponent } from './tab-components/tab.component';
+import { AccordionComponent } from './accordion/accordion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabsetComponent,
-    TabComponent
+    TabComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,
