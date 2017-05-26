@@ -10,7 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TabComponent implements OnInit {
 
   @Input('tabInfo') tabClass:any;
-  @Input() active:boolean = true;
+  @Input() active:boolean = false;
 
   constructor() {
 
