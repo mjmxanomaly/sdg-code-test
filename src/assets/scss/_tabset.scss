@@ -8,7 +8,7 @@
   .tab-set {
     text-align: center;
     width: 100vw;
-    min-height: 340px;
+    min-height: 400px;
 
     .tab-header {
       position: relative;
@@ -104,6 +104,9 @@
           margin: 10px auto 0;
         }
       }
+    }
+    .tab-state {
+      position: absolute;
     }
     .tab-paragraph {
       position: relative;

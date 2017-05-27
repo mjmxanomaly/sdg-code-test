@@ -2,4 +2,41 @@
   @media screen and (min-width:$mobile) {
     display:none;
   }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-top: 1px solid black;
+    padding: 15px 0 15px 15px;
+    text-transform: uppercase;
+    @include transition(all 0.3s);
+    @include clearFix;
+
+    .mat-icon {
+      float: right;
+      padding-right: 20px;
+    }
+
+
+
+    &:hover {
+      @include greyGradient;
+      border-color: $neutralGrey;
+      @include transition(all 0.3s);
+    }
+  }
+
+  .accordion-content {
+    padding: 15px 8px;
+    text-align: center;
+
+    li {
+      margin: 10px 15px;
+      font-size: 1.1rem;
+
+      span {
+        font-size: 2.3rem;
+      }
+    }
+  }
 }

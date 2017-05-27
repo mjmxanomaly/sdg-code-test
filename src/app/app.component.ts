@@ -1,6 +1,7 @@
 import { Component, ViewChildren, QueryList, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import { AccordionComponent } from './accordion/accordion.component';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -38,10 +39,10 @@ export class AppComponent implements AfterViewInit {
     const accordionList = this.accordion.toArray();
     const lastItem = accordionList.length - 1;
     let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    console.log(accordionList);
-    if (w < 515) {
-      accordionList[lastItem].switch = true;
-      console.log(accordionList[lastItem].switch);
-    }
+    setTimeout(() => {
+      if (w < 515) {
+        accordionList[lastItem].switch = true;
+      }
+    }, 300);
   }
 }

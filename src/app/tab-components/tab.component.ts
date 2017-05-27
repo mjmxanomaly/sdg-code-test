@@ -1,11 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { tabStateTrigger } from '../animations';
 
 @Component({
   selector: 'tab',
   template: `
-    <ng-content *ngIf="active"></ng-content>
+    <div @tabState *ngIf="active" class="tab-state">
+      <ng-content></ng-content>
+    </div>
   `,
-  styles: []
+  styles: [],
+  animations: [
+    tabStateTrigger
+  ]
 })
 export class TabComponent implements OnInit {
 

@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { accordionStateTrigger } from '../animations';
 
 @Component({
   selector: 'accordion',
   template: `
     <ul>
-        <h2 (click)="toggleState(accordionTabs)">{{accordionTabs.title}}</h2>
-        <div *ngIf="accordionTabs.switch || switch" #switchActive>
+        <h2 (click)="toggleState(accordionTabs)">{{accordionTabs.title}} <md-icon *ngIf="!switch">add</md-icon><md-icon *ngIf="switch">remove</md-icon></h2>
+        <div class="accordion-content" *ngIf="accordionTabs.switch || switch" [@accordionState]>
           <ng-container *ngIf="accordionTabs.materials">
             <li>
               <span>{{accordionTabs.materials.cashmere}}%</span><br />cashmere
@@ -21,7 +22,10 @@ import { Component, OnInit, Input } from '@angular/core';
         </div>
     </ul>
   `,
-  styles: []
+  styles: [],
+  animations: [
+    accordionStateTrigger
+  ]
 })
 export class AccordionComponent implements OnInit {
 
